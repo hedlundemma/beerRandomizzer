@@ -4,7 +4,7 @@
   const query = createQuery({
     queryKey: ['beers'],
     queryFn: () =>
-      fetch('https://api.punkapi.com/v2/beers/random').then(
+      fetch('https://api.punkapi.com/v2/beers').then(
         (res) => res.json(),
       ),
   })
@@ -21,7 +21,7 @@
       <p>Error: {$query.error}</p>
     {:else if $query.isSuccess}
       {#each $query.data as beer}
-        <p>{beer.beer_name}</p>
+        <p>{beer.description}</p>
       {/each}
     {/if}
   </div>

@@ -4,7 +4,7 @@
   const query = createQuery({
     queryKey: ['beers'],
     queryFn: () =>
-      fetch('https://api.punkapi.com/v2/beers').then(
+      fetch('https://api.punkapi.com/v2/beers/random').then(
         (res) => res.json(),
       ),
   })
@@ -21,7 +21,8 @@
       <p>Error: {$query.error}</p>
     {:else if $query.isSuccess}
       {#each $query.data as beer}
-        <p>{beer.description}</p>
+      <img src = {beer.image_url} alt = "beer">
+       <p>{beer.name}</p>
       {/each}
     {/if}
   </div>

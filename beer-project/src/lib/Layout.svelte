@@ -18,6 +18,7 @@
     {#if $query.isLoading}
       <p>Loading...</p>
     {:else if $query.isError}
+      <img src="./no-image-available" alt="">
       <p>Error: {$query.error}</p>
     {:else if $query.isSuccess}
       {#each $query.data as beer}

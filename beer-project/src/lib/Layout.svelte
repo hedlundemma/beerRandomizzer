@@ -10,7 +10,6 @@
   })
 
   console.log(query);
-  
 
   </script>
   
@@ -18,12 +17,28 @@
     {#if $query.isLoading}
       <p>Loading...</p>
     {:else if $query.isError}
-      <img src="./no-image-available" alt="">
+      
       <p>Error: {$query.error}</p>
     {:else if $query.isSuccess}
       {#each $query.data as beer}
-      <img src = {beer.image_url} alt = "beer">
+      {#if beer.image_url}
+      <img src={beer.image_url} alt = "beer">
+      {:else}
+      <img class = "error" src="../no-image-available.jpeg" alt="no img available">
+      
+      {/if}
+      
        <p>{beer.name}</p>
       {/each}
     {/if}
+
   </div>
+
+
+
+  <style>
+    .error {
+      width: 400px;
+      height: 400px;
+    }
+  </style>

@@ -1,5 +1,12 @@
-<script type = "ts">
-   
+<script lang = "ts">
+   import { createQuery } from '@tanstack/svelte-query';
+   import { SvelteComponentTyped } from 'svelte';
+
+   export type ButtonProps {
+    onClick?: () => void;
+    disabled?: boolean;
+  }
+ 
 </script>
 
 <button on:click>

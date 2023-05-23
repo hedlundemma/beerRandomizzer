@@ -4,14 +4,18 @@
   import Button from './Button.svelte';
 
   const queryClient = new QueryClient()
+
+  function handleClick () {
+      console.log("hello")
+  };
 </script>
 
 <QueryClientProvider client={queryClient}>
   <Layout />
-  <Button>Click me</Button>
+  <Button on:click = {handleClick}>Click me</Button>
 </QueryClientProvider>
-<main>
+ 
 
   
 
-</main>
+

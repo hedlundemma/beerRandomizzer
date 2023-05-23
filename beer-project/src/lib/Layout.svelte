@@ -7,7 +7,7 @@
       fetch('https://api.punkapi.com/v2/beers/random').then(
         (res) => res.json(),
       ),
-  })
+  });
 
   console.log(query);
 
@@ -29,12 +29,11 @@
       {/if}
       
        <p>{beer.name}</p>
+       <p>{beer.food_pairing}</p> 
       {/each}
     {/if}
 
   </div>
-
-
 
   <style>
     .error {
@@ -42,3 +41,5 @@
       height: 400px;
     }
   </style>
+
+  

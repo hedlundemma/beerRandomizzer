@@ -1,17 +1,17 @@
 <script lang="ts">
-    import { createQuery } from '@tanstack/svelte-query';
+  import { createQuery } from '@tanstack/svelte-query';
+  import { type Beer } from '../types/types';
 
   const query = createQuery({
     queryKey: ['beers'],
     queryFn: () =>
       fetch('https://api.punkapi.com/v2/beers/random').then(
-        (res) => res.json(),
+        (res) => res.json() as Promise <Beer[]>,
       ),
   })
 
   console.log(query);
   
-
   </script>
   
   <div>

@@ -5,14 +5,11 @@
 
   const queryClient = new QueryClient();
 
-  async function handleClick() {
-    await queryClient.refetchQueries('beers');
-  }
 </script>
 
 <QueryClientProvider client={queryClient}>
   <Layout />
-  <Button on:click={handleClick}>Click me</Button>
+  <Button on:click>Click me</Button>
 </QueryClientProvider>
 
   

@@ -1,19 +1,25 @@
 <script lang="ts">
 
- 
-   import { type Beer } from '../types/types';
+import { type Beer, type Button } from '../types/types';
 
+const randomButton: Button = {
+  text: 'Fetch Beer',
+  onClick: () => {
+    // Perform submit action
+  },
+};
   
 </script>
 
-<button on:click>Fetch Beer</button>
+<button on:click = {randomButton.onClick}>{randomButton.text}</button>
+
+
 
 
 
   <style>
     button {
       background-color: black;
-      border-radius: 1rem;
       border: none;
       cursor: pointer;
       font-size: 1.5rem;

@@ -9,7 +9,7 @@
 
 <QueryClientProvider client={queryClient}>
   <Layout />
-  <Button on:click>Click me</Button>
+ <Button on:click></Button>
 </QueryClientProvider>
 
   

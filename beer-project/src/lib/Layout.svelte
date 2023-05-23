@@ -7,7 +7,7 @@
   const query = createQuery({
     queryKey: ['beers'],
     queryFn: () =>
-      fetch('https://api.punkapi.com/v2/beers/random').then(
+      fetch('https://api.punkapi.com/v2/beers/11').then(
         (res) => res.json() as Promise <Beer[]>
       ),
   })

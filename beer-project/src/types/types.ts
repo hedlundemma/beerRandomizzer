@@ -8,3 +8,8 @@ export type Beer = {
     food_pariing: string,
     image_url?: string
     }
+
+    export type Button = {
+        text: string;
+        onClick: () => void;
+      };

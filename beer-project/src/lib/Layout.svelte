@@ -9,16 +9,29 @@
     image_url?: string
   }
 
+    type Beer = {
+    id: number,
+    name: string,
+    description: string,
+    image_url?: string
+  }
+
   const query = createQuery({
     queryKey: ['beers'],
     queryFn: () =>
       fetch('https://api.punkapi.com/v2/beers/random').then(
+<<<<<<< Updated upstream
         (res) => res.json() as Promise <Beer[]>,
       ),
   }) 
 
   console.log(query);
   
+=======
+        (res) => res.json() as Promise <Beer[]>
+      ),
+  })
+>>>>>>> Stashed changes
   </script>
   
   <div>

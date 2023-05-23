@@ -2,12 +2,7 @@
   import { createQuery } from '@tanstack/svelte-query';
   import { type Beer } from '../types/types';
 
-    type Beer = {
-    id: number,
-    name: string,
-    description: string,
-    image_url?: string
-  }
+  
 
   const query = createQuery({
     queryKey: ['beers'],

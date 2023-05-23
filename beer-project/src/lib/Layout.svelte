@@ -7,9 +7,10 @@
       fetch('https://api.punkapi.com/v2/beers/random').then(
         (res) => res.json(),
       ),
-  });
+  })
 
   console.log(query);
+  
 
   </script>
   
@@ -17,29 +18,12 @@
     {#if $query.isLoading}
       <p>Loading...</p>
     {:else if $query.isError}
-      
+      <img src="./no-image-available" alt="No image available">
       <p>Error: {$query.error}</p>
     {:else if $query.isSuccess}
       {#each $query.data as beer}
-      {#if beer.image_url}
-      <img src={beer.image_url} alt = "beer">
-      {:else}
-      <img class = "error" src="./no-image-available.jpeg" alt="no img available">
-      
-      {/if}
-      
+      <img src = {beer.image_url} alt = "beer">
        <p>{beer.name}</p>
-       <p>{beer.food_pairing}</p> 
       {/each}
     {/if}
-
   </div>
-
-  <style>
-    .error {
-      width: 400px;
-      height: 400px;
-    }
-  </style>
-
-  

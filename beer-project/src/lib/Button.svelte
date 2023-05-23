@@ -1,17 +1,13 @@
 <script lang = "ts">
    import { createQuery } from '@tanstack/svelte-query';
    import { SvelteComponentTyped } from 'svelte';
-
-   export type ButtonProps {
-    onClick?: () => void;
-    disabled?: boolean;
-  }
- 
+   import Layout from './Layout.svelte';
+   export let role = 'button';
 </script>
 
-<button on:click>
-    <slot />
-  </button>
+<button {role} on:click>
+  <slot/>
+</button>
 
   <style>
     button {

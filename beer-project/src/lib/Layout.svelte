@@ -24,7 +24,7 @@
       {#if beer.image_url}
       <img src={beer.image_url} alt = "beer">
       {:else}
-      <img class = "error" src="../no-image-available.jpeg" alt="no img available">
+      <img class = "error" src="./no-image-available.jpeg" alt="no img available">
       
       {/if}
       

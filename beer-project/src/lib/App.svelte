@@ -12,5 +12,5 @@
 
 <QueryClientProvider client={queryClient}>
   <Layout />
- <Button on:click={fetchBeer}>Fetch Beer</Button>
+ <Button on:click={fetchBeer}></Button>
 </QueryClientProvider>

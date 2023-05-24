@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { QueryClient } from '@tanstack/svelte-query';
+
 
 import { type Beer, type Button } from '../types/types';
 
@@ -8,14 +10,12 @@ const randomButton: Button = {
     // Perform submit action
   },
 };
-  
+
 </script>
 
-<button on:click = {randomButton.onClick}>{randomButton.text}</button>
-
-
-
-
+<button on:click>
+  <slot />
+</button>
 
   <style>
     button {

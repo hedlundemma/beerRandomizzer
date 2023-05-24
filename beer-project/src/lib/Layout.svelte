@@ -2,15 +2,14 @@
   import { createQuery } from '@tanstack/svelte-query';
   import { type Beer } from '../types/types';
 
-  
-
   const query = createQuery({
     queryKey: ['beers'],
     queryFn: () =>
-      fetch('https://api.punkapi.com/v2/beers/11').then(
+      fetch('https://api.punkapi.com/v2/beers/random').then(
         (res) => res.json() as Promise <Beer[]>
       ),
   })
+
   </script>
   
   <div>
@@ -26,3 +25,6 @@
       {/each}
     {/if}
   </div>
+
+  <style>
+  </style>

@@ -5,13 +5,12 @@
 
   const queryClient = new QueryClient();
 
+  async function fetchBeer(): Promise<void> {
+  await queryClient.refetchQueries(['beers']);
+}
 </script>
 
 <QueryClientProvider client={queryClient}>
   <Layout />
- <Button on:click></Button>
+ <Button on:click={fetchBeer}>Fetch Beer</Button>
 </QueryClientProvider>
-
-  
-
-

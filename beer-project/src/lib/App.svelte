@@ -2,11 +2,13 @@
   import { QueryClient, QueryClientProvider } from '@tanstack/svelte-query';
   import Layout from './Layout.svelte';
   import Button from './Button.svelte';
+  import type { Beer } from '../types/types';
 
   const queryClient = new QueryClient();
 
-  async function fetchBeer(): Promise<void> {
-  await queryClient.fetchQuery(['beers']);
+  async function fetchBeer(): Promise<Beer[]> {
+  const data = await queryClient.fetchQuery(['beers']);
+  return data as Beer[];
 }
 </script>
 

@@ -3,6 +3,8 @@
   import Layout from './Layout.svelte';
   import Button from './Button.svelte';
   import type { Beer } from '../types/types';
+ 
+ 
 
   const queryClient = new QueryClient();
 
@@ -11,8 +13,10 @@
   return data as Beer[];
 }
 </script>
-
+<Layout>
 <QueryClientProvider client={queryClient}>
-  <Layout />
- <Button on:click={fetchBeer}></Button>
+  <Button on:click={fetchBeer}></Button>
+
 </QueryClientProvider>
+
+</Layout>

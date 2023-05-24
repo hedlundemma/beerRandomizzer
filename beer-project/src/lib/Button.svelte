@@ -20,7 +20,7 @@ const query = createQuery({
 
   </script>
   
-<div>
+<div class ="beer-data">
   {#if $query.isLoading}
     <p>Loading...</p>
   {:else if $query.isError}
@@ -28,17 +28,19 @@ const query = createQuery({
   {:else if $query.isSuccess}
     {#each $query.data as beer}
     {#if beer.image_url}
-    <img src = {beer.image_url} alt = "beer">
+    <img src = {beer.image_url} class ="custom-image" alt = "beer">
     {:else}
    <img class = "error-image" src = "./no-image-available.jpeg" alt = "no beer img availabe">
     
      {/if}
      <p>{beer.name}</p>
+     <p>{beer.description}</p>
     {/each}
   {/if}
-</div>
+
 
 <button on:click> {RandomButton.text} </button>
+</div>
 
   <style>
     button {
@@ -48,12 +50,31 @@ const query = createQuery({
       font-size: 1.5rem;
       padding: 1rem;
       color: white;
+      margin-bottom: 2rem;
     }
 
     .error-image{
       width: 400px;
       height: 400px;
     }
+
+    .custom-image{
+    height: 600px;
+    }
+
+    .beer-data{
+      width: 80%;
+      height: 800px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 3rem;
+      margin-top: 5rem;
+      text-align: center;
+    }
+
+    
   </style>
 
  

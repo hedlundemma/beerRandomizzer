@@ -64,7 +64,7 @@ const query = createQuery({
 
     .beer-data{
       width: 80%;
-      height: 800px;
+      height: 1000px;
       display: flex;
       justify-content: center;
       align-items: center;

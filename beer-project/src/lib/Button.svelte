@@ -24,12 +24,15 @@ const query = createQuery({
   {#if $query.isLoading}
     <p>Loading...</p>
   {:else if $query.isError}
-    <img src="./no-image-available" alt="No beer available">
-    <p>Error: {$query.error}</p>
+   <p>Error: {$query.error}</p>
   {:else if $query.isSuccess}
     {#each $query.data as beer}
+    {#if beer.image_url}
     <img src = {beer.image_url} alt = "beer">
+    {:else}
+   <img class = "error-image" src = "./no-image-available.jpeg" alt = "no beer img availabe">
      <p>{beer.name}</p>
+     {/if}
     {/each}
   {/if}
 </div>
@@ -44,6 +47,11 @@ const query = createQuery({
       font-size: 1.5rem;
       padding: 1rem;
       color: white;
+    }
+
+    .error-image{
+      width: 400px;
+      height: 400px;
     }
   </style>
 

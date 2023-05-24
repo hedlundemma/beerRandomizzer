@@ -6,7 +6,7 @@
   const queryClient = new QueryClient();
 
   async function fetchBeer(): Promise<void> {
-  await queryClient.refetchQueries(['beers']);
+  await queryClient.fetchQuery(['beers']);
 }
 </script>
 

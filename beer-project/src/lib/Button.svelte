@@ -31,8 +31,9 @@ const query = createQuery({
     <img src = {beer.image_url} alt = "beer">
     {:else}
    <img class = "error-image" src = "./no-image-available.jpeg" alt = "no beer img availabe">
-     <p>{beer.name}</p>
+    
      {/if}
+     <p>{beer.name}</p>
     {/each}
   {/if}
 </div>

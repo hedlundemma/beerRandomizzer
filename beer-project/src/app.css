@@ -39,3 +39,11 @@ h2{
 p{
   font-size: 2rem;
 }
+
+.beer-section{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+  
+  

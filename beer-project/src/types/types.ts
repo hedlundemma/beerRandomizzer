@@ -5,7 +5,10 @@ export type Beer = {
     name: string,
     description: string,
     food_pairing: string;
-    image_url?: string
+    image_url?: string,
+    brewers_tips: string
+    
+
     }
 
     export type Button = {

@@ -2,6 +2,7 @@
 import {type Button, type Beer } from '../types/types';
 import { createQuery } from '@tanstack/svelte-query';
 
+
 // button created from type Button
  const RandomButton: Button = {
   text: 'Fetch Random Beer',
@@ -21,7 +22,7 @@ const query = createQuery({
   })
 
   </script>
-     
+   
 <div class ="beer-data">
   {#if $query.isLoading}
     <p>Loading...</p>
@@ -35,14 +36,15 @@ const query = createQuery({
    <img class = "error-image" src = "./no-image-available.jpeg" alt = "no beer img availabe">
      {/if}
      <p>{beer.name}</p>
-     <p>{beer.description}</p>
     {/each}
   {/if}
+  <button on:click> {RandomButton.text} </button>
   </div>
 
 
 
-<button on:click> {RandomButton.text} </button>
+
+
 
 
   <style>
@@ -66,7 +68,7 @@ const query = createQuery({
     }
 
     .beer-data{
-      width: 80%;
+      width: 50%;
       height: 1000px;
       display: flex;
       justify-content: center;
@@ -75,6 +77,8 @@ const query = createQuery({
       margin-bottom: 3rem;
       margin-top: 5rem;
       text-align: center;
+      align-self: flex-start; 
+      margin-left: 1rem;
     }
 
     

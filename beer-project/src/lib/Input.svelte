@@ -106,8 +106,8 @@
   }
 
   .beer-container img{
-    height:500px;
-    width: 200px;
+    width: 120px;
+      height: 400px;
   }
 
  

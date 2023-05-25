@@ -1,6 +1,7 @@
 <script lang="ts">
 import {type Button, type Beer } from '../types/types';
 import { createQuery } from '@tanstack/svelte-query';
+import Favourite from './Favourite.svelte';
 
 
 // button created from type Button
@@ -8,8 +9,6 @@ import { createQuery } from '@tanstack/svelte-query';
   text: 'Fetch Random Beer',
  
 };
-
-
 
 // query to fetch a random beer 
 const query = createQuery({
@@ -20,6 +19,13 @@ const query = createQuery({
       ),
       refetchInterval:  false
   })
+
+function addToFavourites (item: Beer) {
+  let savedBeers = JSON.parse(localStorage.getItem('savedBeers')) || [];
+  savedBeers.push(item);
+  localStorage.setItem('savedBeers', JSON.stringify(savedBeers))
+  window.location.reload();
+  };
 
   </script>
    
@@ -35,7 +41,9 @@ const query = createQuery({
     {:else}
    <img class = "error-image" src = "./no-image-available.jpeg" alt = "no beer img availabe">
      {/if}
+     <Favourite on:click={() => addToFavourites(beer)}/>
      <p>{beer.name}</p>
+     <p>{beer.description}</p>
     {/each}
   {/if}
   <button on:click> {RandomButton.text} </button>

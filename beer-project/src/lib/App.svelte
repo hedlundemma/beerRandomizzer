@@ -4,6 +4,7 @@
   import Layout from './Layout.svelte';
   import Button from './Button.svelte';
   import Input from './Input.svelte';
+  import SavedBeers from './SavedBeers.svelte';
   import type { Beer } from '../types/types';
   import '../app.css';
  
@@ -22,8 +23,8 @@ async function fetchBeer(): Promise<Beer[]> {
   <section class = "beer-section">
   <Button on:click={fetchBeer}></Button>
   <Input/>
-</section>
-
+  </section>
+  <SavedBeers/>
 </QueryClientProvider>
 
 

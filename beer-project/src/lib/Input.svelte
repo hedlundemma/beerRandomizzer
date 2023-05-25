@@ -2,27 +2,31 @@
     import { createQuery } from '@tanstack/svelte-query';
     import {type Button, type Beer } from '../types/types';
 
-  
     let intervalMs = 1000
   
     const endpoint = 'https://api.punkapi.com/v2/beers';
     
-    //variable to store the beern name
+    //variable to store the beer name
     let beerName = ''
-  
-    $: query = createQuery({
-      queryKey: ['refetch'],
-      queryFn: async () => await fetch(endpoint).then((r) => r.json()),
-      refetchInterval: intervalMs,
-    })
 
-    const searchButton: Button = {
-        text: "Search Beer"
-    }
+    $: query = createQuery({
+    queryKey: ['refetch'],
+    queryFn: async () => {
+      if (beerName) {
+        //fetch the beer_name endpoint
+        const url = `${endpoint}?beer_name=${encodeURIComponent(beerName)}`;
+        return await fetch(url).then((r) => r.json());
+      } else {
+        return [];
+      }
+    },
+    refetchInterval: intervalMs,
+ 
+  });
   </script>
   
   <input bind:value={beerName} type="text" placeholder="Enter beer name" />
-  <button on:click>{searchButton.text}</button>
+
 
   {#if $query.isLoading}
   <p>Loading...</p>
@@ -33,7 +37,6 @@
         <li>{beer.name}</li>
       {/each}
     </ul>
-  {:else}
-    <p>No beers found.</p>
+
   {/if}
 {/if}

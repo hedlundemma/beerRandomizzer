@@ -30,6 +30,12 @@ h1 {
   color: white;
 }
 
+h2{
+  font-size: 2rem;
+  line-height: 1.1;
+  color: white;
+}
+
 p{
   font-size: 2rem;
 }

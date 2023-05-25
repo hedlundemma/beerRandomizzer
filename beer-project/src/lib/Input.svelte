@@ -1,6 +1,11 @@
 <script lang="ts">
     import { createQuery } from '@tanstack/svelte-query';
-    import {type Button, type Beer } from '../types/types';
+    import {type Beer, type Input } from '../types/types';
+
+    const input:Input = {
+      placeholder: "Search for beer"
+
+    };
 
     let intervalMs: number = 1000;
   
@@ -9,6 +14,8 @@
     //variable to store the beer name
     let beerName: string = '';
 
+
+    //dollar-sign makes sure its reactive 
     $: query = createQuery({
     queryKey: ['refetch'],
     queryFn: async () => {
@@ -23,8 +30,8 @@
     refetchInterval: intervalMs,
   });
   </script>
-
-  <input bind:value={beerName} type="text" placeholder="Enter beer name" />
+  <!-- input bind value makes sure that the variable beerName will be updated with the current value of the input element-->
+  <input bind:value={beerName} type="text" placeholder={input.placeholder} />
 
 
   {#if $query.isLoading}

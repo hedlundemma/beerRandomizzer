@@ -4,7 +4,6 @@
 
     const input:Input = {
       placeholder: "Search for beer"
-
     };
 
     let intervalMs: number = 1000;
@@ -33,16 +32,54 @@
   <!-- input bind value makes sure that the variable beerName will be updated with the current value of the input element-->
   <input bind:value={beerName} type="text" placeholder={input.placeholder} />
 
-
+<div class = "beer-container">
   {#if $query.isLoading}
   <p>Loading...</p>
 {:else}
   {#if $query.isSuccess && $query.data.length > 0}
-    <ul>
+    
       {#each $query.data as beer}
-        <li>{beer.name}</li>
+     
+        <h2>{beer.name}</h2>
+        {#if beer.image_url}
+        
+    <img src = {beer.image_url} class ="custom-image" alt = "beer">
+    {:else}
+   <img class = "error-image" src = "./no-image-available.jpeg" alt = "no beer img availabe">
+ 
+     {/if}
+     <p>{beer.description}</p>
+     <h2>Food Paring:</h2>
+    <p>{beer.food_pairing}</p>
+  
       {/each}
-    </ul>
+    
+    
 
   {/if}
+
 {/if}
+</div>
+
+<style>
+
+  .beer-container {
+    width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap:wrap;
+  text-align: center;
+
+  }
+
+  .beer-container img{
+   
+    height:500px;
+    width: 200px;
+  }
+
+ 
+
+</style>

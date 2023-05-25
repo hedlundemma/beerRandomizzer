@@ -8,6 +8,8 @@ import { createQuery } from '@tanstack/svelte-query';
  
 };
 
+
+
 // query to fetch a random beer 
 const query = createQuery({
     queryKey: ['beers'],
@@ -19,7 +21,7 @@ const query = createQuery({
   })
 
   </script>
-  
+     
 <div class ="beer-data">
   {#if $query.isLoading}
     <p>Loading...</p>
@@ -36,10 +38,12 @@ const query = createQuery({
      <p>{beer.description}</p>
     {/each}
   {/if}
+  </div>
+
 
 
 <button on:click> {RandomButton.text} </button>
-</div>
+
 
   <style>
     button {

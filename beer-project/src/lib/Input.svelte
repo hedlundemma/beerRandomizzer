@@ -2,12 +2,12 @@
     import { createQuery } from '@tanstack/svelte-query';
     import {type Button, type Beer } from '../types/types';
 
-    let intervalMs = 1000
+    let intervalMs: number = 1000;
   
-    const endpoint = 'https://api.punkapi.com/v2/beers';
+    const endpoint: string = 'https://api.punkapi.com/v2/beers';
     
     //variable to store the beer name
-    let beerName = ''
+    let beerName: string = '';
 
     $: query = createQuery({
     queryKey: ['refetch'],
@@ -15,16 +15,15 @@
       if (beerName) {
         //fetch the beer_name endpoint
         const url = `${endpoint}?beer_name=${encodeURIComponent(beerName)}`;
-        return await fetch(url).then((r) => r.json());
+        return await fetch(url).then((r) => r.json()) as Promise <Beer[]>;
       } else {
         return [];
       }
     },
     refetchInterval: intervalMs,
- 
   });
   </script>
-  
+
   <input bind:value={beerName} type="text" placeholder="Enter beer name" />
 
 

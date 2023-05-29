@@ -15,12 +15,13 @@
     return data as Beer[];
   }
 
-  function goToBeerPage() {
+  function goToBeerPage(): void {
     sessionStorage.setItem('showElements', 'false');
     window.location.reload();
   }
 
   let showElements = sessionStorage.getItem('showElements');
+  
 
 </script>
 

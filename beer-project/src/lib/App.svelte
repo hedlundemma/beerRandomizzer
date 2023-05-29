@@ -28,7 +28,7 @@
   // });
 
   function goToBeerPage() {
-    showElements = false; // Hide the elements
+    localStorage.setItem('showElements', 'false');
   }
   
 </script>

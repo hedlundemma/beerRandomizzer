@@ -59,7 +59,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        margin-bottom: 3rem;
+       
         margin-top: 5rem;
         text-align: center;
         align-self: flex-start; 

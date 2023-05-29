@@ -49,12 +49,13 @@
     }
 
     .custom-image{
-    height: 600px;
+    height: 500px;
+    margin-bottom: 2rem;
     }
 
     .beer-data{
         width: 50%;
-        height: 1000px;
+        
         display: flex;
         justify-content: center;
         align-items: center;

@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: 400;
   color: black;
   background-color: white;
@@ -28,8 +28,14 @@ h2 {
   line-height: 1.1;
 }
 
+h3{
+  font-size: 1.5rem;
+  margin-top: 3rem;
+}
+
 p {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  line-height: 2rem;
 }
 
 .beer-section {

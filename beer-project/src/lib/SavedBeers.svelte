@@ -38,16 +38,12 @@
         flex-wrap: wrap;
         gap: 2rem;
         text-align: center;
-       
-      padding-left: 10px;
-      padding-bottom: 10px;
-        
+        padding-left: 10px;
+        padding-bottom: 10px;
         border: 1px solid black;
     }
 
-    p {
-        font-size: 1rem;
-    }
+  
     
     img {
         height: 120px;

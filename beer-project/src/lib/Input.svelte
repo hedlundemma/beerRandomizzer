@@ -101,6 +101,7 @@
   }
   input::placeholder{
     color:white;
+    font-size: 2rem;
   }
 
   .beer-container img{

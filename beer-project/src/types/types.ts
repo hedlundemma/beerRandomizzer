@@ -11,10 +11,6 @@ export type Beer = {
 
     }
 
-    export type Button = {
-        text: string;
-      };
+  
 
-      export type Input = {
-        placeholder:string;
-      }
+  

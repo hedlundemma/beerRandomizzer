@@ -1,14 +1,10 @@
 <script lang="ts">
-import {type Button, type Beer } from '../types/types';
+import {type Beer } from '../types/types';
 import { createQuery } from '@tanstack/svelte-query';
 import Favourite from './Favourite.svelte';
 
 
-// button created from type Button
- const RandomButton: Button = {
-  text: 'Fetch Random Beer',
- 
-};
+
 
 // query to fetch a random beer 
 const query = createQuery({
@@ -17,7 +13,8 @@ const query = createQuery({
       fetch('https://api.punkapi.com/v2/beers/random').then(
         (res) => res.json() as Promise <Beer[]>
       ),
-      refetchInterval:  false
+      
+      refetchOnWindowFocus:false
   })
 
 function addToFavourites (item: Beer) {
@@ -43,10 +40,10 @@ function addToFavourites (item: Beer) {
      {/if}
      <Favourite on:click={() => addToFavourites(beer)}/>
      <p>{beer.name}</p>
-     <p>{beer.description}</p>
+     
     {/each}
   {/if}
-  <button on:click> {RandomButton.text} </button>
+  <button on:click> Fetch random button </button>
   </div>
 
 

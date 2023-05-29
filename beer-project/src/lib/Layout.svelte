@@ -6,7 +6,9 @@
   <h1>BEER</h1>
 </nav>
 <!-- slot is a indication that more things will be here-->
+
 <slot />
+
 
 <footer>
   <h2>BYE</h2>

@@ -1,13 +1,11 @@
 <script lang="ts">
     import { createQuery } from '@tanstack/svelte-query';
-    import {type Beer, type Input } from '../types/types';
+    import {type Beer} from '../types/types';
     import '../app.css';
 
-    const input:Input = {
-      placeholder: "Search for beer"
-    };
+  
 
-    let intervalMs: number = 1000;
+ 
   
     const endpoint: string = 'https://api.punkapi.com/v2/beers';
     
@@ -17,23 +15,19 @@
 
     //dollar-sign makes sure its reactive 
     $: query = createQuery({
-    queryKey: ['refetch'],
+    queryKey: ['beerName', beerName],
     queryFn: async () => {
-      if (beerName) {
-        //fetch the beer_name endpoint
         const url = `${endpoint}?beer_name=${encodeURIComponent(beerName)}`;
         return await fetch(url).then((r) => r.json()) as Promise <Beer[]>;
-      } else {
-        return [];
-      }
+    
     },
-    refetchInterval: intervalMs,
+  
   });
   </script>
   <!-- input bind value makes sure that the variable beerName will be updated with the current value of the input element-->
  
 
-  <input bind:value={beerName} type="text" placeholder={input.placeholder} />
+  <input bind:value={beerName} type="text" placeholder="Search for beer"/>
 <div class = "beer-container">
   
   {#if $query.isLoading}

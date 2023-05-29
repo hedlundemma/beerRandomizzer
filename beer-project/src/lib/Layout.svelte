@@ -28,5 +28,4 @@
     margin-top: 2rem;
     color: white;
   }
-
 </style>

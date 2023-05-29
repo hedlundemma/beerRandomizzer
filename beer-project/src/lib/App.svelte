@@ -15,24 +15,26 @@
     return data as Beer[];
   }
 
-  let showElements = localStorage.getItem('showElements') === 'true';
-
   function goToBeerPage() {
-    localStorage.setItem('showElements', 'false');
+    sessionStorage.setItem('showElements', 'false');
+    window.location.reload();
   }
+
+  let showElements = sessionStorage.getItem('showElements');
+
 </script>
 
-{#if showElements}
+{#if showElements !== 'false'}
     <h1 style="color: black;">Welcome to beer heaven</h1>
     <button on:click={goToBeerPage}>Get me a random beer</button>
 {:else}
 <Layout>
   <QueryClientProvider client={queryClient}>
     <section class = "beer-section">
-    <Input/>
-    <SingleBeer>
-      <Button on:click={fetchBeer} buttonText="Fetch Random Beer"/>
-    </SingleBeer>
+      <SingleBeer>
+        <Button on:click={fetchBeer} buttonText="Fetch Random Beer"/>
+      </SingleBeer>
+      <Input/>
     </section>
     <SavedBeers/>
   </QueryClientProvider>

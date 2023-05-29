@@ -20,7 +20,12 @@
 {#each savedBeers as beer}
     <div>
         <p>{beer.name}</p>
-        <img src={beer.image_url} alt="Beer.">
+        {#if beer.image_url}
+        <img src = {beer.image_url} class ="custom-image" alt = "beer">
+        {:else}
+       <img class = "error-image" src = "./no-image-available.jpeg" alt = "no beer img availabe">
+        {/if}
+        
         <Favourite on:click={() => removeFromFavourite(beer)}/>
     </div>
 {/each}

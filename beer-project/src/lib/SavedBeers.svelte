@@ -15,7 +15,7 @@
 
 </script>
 
-<h3>Favourites</h3>
+<h3>Your favourite beers</h3>
 <section class="saved-beers">
 {#each savedBeers as beer}
     <div>
@@ -38,6 +38,11 @@
         flex-wrap: wrap;
         gap: 2rem;
         text-align: center;
+       
+      padding-left: 10px;
+      padding-bottom: 10px;
+        
+        border: 1px solid black;
     }
 
     p {

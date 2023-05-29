@@ -1,12 +1,8 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-
   font-weight: 400;
-
- 
   color: black;
   background-color: white;
-
 }
 
 #app{
@@ -17,11 +13,8 @@
   flex-direction: column;
 }
 
-
 body {
   margin: 0;
- 
-
 }
 
 h1 {
@@ -30,20 +23,22 @@ h1 {
   color: white;
 }
 
-h2{
+h2 {
   font-size: 2rem;
   line-height: 1.1;
- 
 }
 
-p{
+p {
   font-size: 2rem;
 }
 
-.beer-section{
+.beer-section {
   display: flex;
   justify-content: space-around;
   width: 100%;
 }
-  
-  
+
+.favourite-beers {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}

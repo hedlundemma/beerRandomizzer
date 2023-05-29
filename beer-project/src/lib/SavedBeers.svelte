@@ -18,7 +18,7 @@
 <h3>Favourites</h3>
 <section class="saved-beers">
 {#each savedBeers as beer}
-    <div>
+    <div class="favourite-beers">
         <p>{beer.name}</p>
         {#if beer.image_url}
         <img src = {beer.image_url} class ="custom-image" alt = "beer">

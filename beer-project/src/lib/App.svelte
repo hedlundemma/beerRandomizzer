@@ -1,17 +1,13 @@
 <!-- App.svelte -->
 <script lang="ts">
-  import {onMount} from 'svelte';
- 
-
-    import { QueryClient, QueryClientProvider } from '@tanstack/svelte-query';
-    
-    import Layout from './Layout.svelte';
-    import Button from './Button.svelte';
-    import Input from './Input.svelte';
-    import SavedBeers from './SavedBeers.svelte';
-    import type { Beer } from '../types/types';
-    import '../app.css';
+  import { QueryClient, QueryClientProvider } from '@tanstack/svelte-query';
+  import Layout from './Layout.svelte';
+  import Button from './Button.svelte';
+  import Input from './Input.svelte';
+  import SavedBeers from './SavedBeers.svelte';
   import SingleBeer from './SingleBeer.svelte';
+  import type { Beer } from '../types/types';
+  import '../app.css';
   
   const queryClient = new QueryClient();
   
@@ -21,11 +17,6 @@
   }
 
   let showElements = localStorage.getItem('showElements') === 'true';
-
-  // onMount(() => {
-  //   // Set the initial page/component
-  //   currentPage = Home;
-  // });
 
   function goToBeerPage() {
     localStorage.setItem('showElements', 'false');

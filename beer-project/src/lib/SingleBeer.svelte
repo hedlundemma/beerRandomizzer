@@ -2,7 +2,6 @@
     import { type Beer } from '../types/types';
     import { createQuery } from '@tanstack/svelte-query';
     import Favourite from './Favourite.svelte';
-    import Button from './Button.svelte';
 
     // query to fetch a random beer 
     const query = createQuery({

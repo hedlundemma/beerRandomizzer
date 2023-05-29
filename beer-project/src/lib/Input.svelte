@@ -16,10 +16,14 @@
     //dollar-sign makes sure its reactive 
     $: query = createQuery({
     queryKey: ['beerName', beerName],
-    queryFn: async () => {
+    queryFn: () => {
+      if(beerName) {
         const url = `${endpoint}?beer_name=${encodeURIComponent(beerName)}`;
-        return await fetch(url).then((r) => r.json()) as Promise <Beer[]>;
-    
+        return fetch(url).then((r) => r.json()) as Promise <Beer[]>;
+        }
+        else {
+          return [];
+        }
     },
   
   });

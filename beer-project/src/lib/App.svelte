@@ -1,4 +1,3 @@
-<!-- App.svelte -->
 <script lang="ts">
   import { QueryClient, QueryClientProvider } from '@tanstack/svelte-query';
   import Layout from './Layout.svelte';
@@ -21,10 +20,9 @@
   function goToBeerPage() {
     localStorage.setItem('showElements', 'false');
   }
-  
 </script>
 
-  {#if showElements}
+{#if showElements}
     <h1 style="color: black;">Welcome to beer heaven</h1>
     <button on:click={goToBeerPage}>Get me a random beer</button>
 {:else}
@@ -38,7 +36,5 @@
     </section>
     <SavedBeers/>
   </QueryClientProvider>
-  
   </Layout>
-  {/if}
-
+{/if}

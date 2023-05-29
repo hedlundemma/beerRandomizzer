@@ -1,5 +1,3 @@
-// Skapa på mina vänner!
-
 export type Beer = {
     id: number,
     name: string,
@@ -7,10 +5,4 @@ export type Beer = {
     food_pairing: string;
     image_url?: string,
     brewers_tips: string
-    
-
-    }
-
-  
-
-  
+}

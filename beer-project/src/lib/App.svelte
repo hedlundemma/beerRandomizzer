@@ -11,15 +11,14 @@
     import SavedBeers from './SavedBeers.svelte';
     import type { Beer } from '../types/types';
     import '../app.css';
+  import SingleBeer from './SingleBeer.svelte';
   
   const queryClient = new QueryClient();
   
   async function fetchBeer(): Promise<Beer[]> {
     const data = await queryClient.fetchQuery(['beers']);
     return data as Beer[];
-    
   }
-
 
   let showElements = localStorage.getItem('showElements') === 'true';
 
@@ -30,13 +29,9 @@
 
   function goToBeerPage() {
     showElements = false; // Hide the elements
-   
- 
   }
-
-
+  
 </script>
-
 
   {#if showElements}
     <h1 style="color: black;">Welcome to beer heaven</h1>
@@ -45,8 +40,10 @@
 <Layout>
   <QueryClientProvider client={queryClient}>
     <section class = "beer-section">
-    <Button on:click={fetchBeer}></Button>
     <Input/>
+    <SingleBeer>
+      <Button on:click={fetchBeer} buttonText="Fetch Random Beer"/>
+    </SingleBeer>
     </section>
     <SavedBeers/>
   </QueryClientProvider>

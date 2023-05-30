@@ -26,8 +26,10 @@
 </script>
 
 {#if showElements !== 'false'}
-    <h1 style="color: black;">Welcome to beer heaven</h1>
-    <button on:click={goToBeerPage}>Get me a random beer</button>
+    <h1 class="welcome-page">Welcome to Beer Explorer</h1>
+    <h2 class="welcome-page">If you crave a beer, but don't know which one, you've come to the right place!</h2>
+    <h3 class="welcome-page">Press the button and be inspired</h3>
+    <button class="welcome-button" on:click={goToBeerPage}>Get me a random beer</button>
 {:else}
 <Layout>
   <QueryClientProvider client={queryClient}>

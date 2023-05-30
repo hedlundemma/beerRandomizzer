@@ -25,7 +25,7 @@
         {:else}
        <img class = "error-image" src = "./no-image-available.jpeg" alt = "no beer img availabe">
         {/if}
-        <Favourite fill="yellow" on:click={() => removeFromFavourite(beer)}/>
+        <Favourite fill="#FFD400" on:click={() => removeFromFavourite(beer)}/>
     </div>
 {/each}
 </section>
@@ -42,8 +42,6 @@
         border: 1px solid black;
     }
 
-  
-    
     img {
         height: 120px;
     }

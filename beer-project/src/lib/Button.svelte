@@ -6,8 +6,11 @@
 
 <style>
   button {
+    width: 20rem;
+    height: 4rem;
     background-color: black;
     border: none;
+    border-radius: 2rem;
     cursor: pointer;
     font-size: 1.5rem;
     padding: 1rem;

@@ -15,7 +15,7 @@
 
 <style>
   nav, footer {
-    display:flex;
+    display: flex;
     align-items: center;
     height: 9rem;
     background-color: black;

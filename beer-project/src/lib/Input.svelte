@@ -31,7 +31,7 @@
   <!-- input bind value makes sure that the variable beerName will be updated with the current value of the input element-->
  
 
-  <input bind:value={beerName} type="text" placeholder="Search for beer"/>
+  <input bind:value={beerName} type="text" placeholder="Search for beer" style="padding: 0.5rem"/>
 <div class = "beer-container">
   
   {#if $query.isLoading}

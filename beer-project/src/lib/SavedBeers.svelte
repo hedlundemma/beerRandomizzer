@@ -1,18 +1,8 @@
 <script lang="ts">
     import Favourite from "./Favourite.svelte";
-    import { type Beer } from '../types/types';
+    import { removeFromFavourite } from "./utils/savedBeersUtils";
 
     let savedBeers = JSON.parse(localStorage.getItem('savedBeers')) || [];
-
-    function removeFromFavourite(item: Beer) {
-        const beerIndex = savedBeers.findIndex((beer: Beer) => beer.name === item.name);
-        if (beerIndex !== -1) {
-        savedBeers.splice(beerIndex, 1);
-        localStorage.setItem('savedBeers', JSON.stringify(savedBeers));
-        window.location.reload();
-        }
-    };
-
 </script>
 
 <h3>Your favourite beers</h3>
@@ -25,7 +15,7 @@
         {:else}
        <img class = "error-image" src = "./no-image-available.jpeg" alt = "no beer img availabe">
         {/if}
-        <Favourite fill="#FFD400" on:click={() => removeFromFavourite(beer)}/>
+        <Favourite fill="#FFD400" on:click={() => removeFromFavourite(beer, savedBeers)}/>
     </div>
 {/each}
 </section>
@@ -41,7 +31,6 @@
         padding-bottom: 10px;
         border: 1px solid black;
     }
-
     img {
         height: 120px;
     }

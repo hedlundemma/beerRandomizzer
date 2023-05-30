@@ -16,5 +16,6 @@
     padding: 1rem;
     color: white;
     margin-bottom: 2rem;
+    margin-top: 1rem;
   }
 </style>

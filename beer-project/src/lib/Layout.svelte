@@ -3,29 +3,12 @@
 </script>
 
 <nav>
-  <h1>BEER</h1>
+  <h1>BEER EXPLORER</h1>
 </nav>
 <!-- slot is a indication that more things will be here-->
 
 <slot />
 
 <footer>
-  <h2>BYE</h2>
+  <h2>A BEER A DAY KEEPS THE DOCTOR AWAY</h2>
 </footer>
-
-<style>
-  nav, footer {
-    display: flex;
-    align-items: center;
-    height: 9rem;
-    background-color: black;
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-  }
-
-  footer {
-    margin-top: 2rem;
-    color: white;
-  }
-</style>

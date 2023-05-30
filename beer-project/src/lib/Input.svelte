@@ -38,30 +38,23 @@
     
       {#each $query.data as beer}
         <h2 style="font-size: 2.5rem;">________________________<br><br>{beer.name}</h2>
-      {#if beer.image_url}
-        
-    <img src = {beer.image_url} class ="custom-image" alt = "beer">
-    {:else}
-    <img class = "error-image" src = "./no-image-available.jpeg" alt = "no beer img availabe">
- 
-     {/if}
-     <h2>Descripton:</h2>
-     <p>{beer.description}</p>
-     <h2>Food Paring:</h2>
+
+      {#if beer.image_url} 
+        <img src = {beer.image_url} class ="custom-image" alt = "beer">
+      {:else}
+        <img class = "error-image" src = "./no-image-available.jpeg" alt = "no beer img availabe">
+    {/if}
+    
+    <h2>Description:</h2>
+    <p>{beer.description}</p>
+    <h2>Food Paring:</h2>
     <p>{beer.food_pairing}</p>
     <h2>Brewers tips:</h2>
     <p>{beer.brewers_tips}</p>
-   
-  
-      {/each}
-    
-    
-
+    {/each}
   {/if}
-
 {/if}
 </div>
-
 
 <style>
 
@@ -75,12 +68,8 @@
   text-align: center;
   align-self: right;
   margin-top:8rem;
-
- 
- margin-right: 3rem;
-
-
-  }
+  margin-right: 3rem;
+}
 
   input {
     position:absolute;
@@ -92,9 +81,8 @@
     border:none;
     height: 3rem;
     font-size: 30px;
- 
-
   }
+
   input::placeholder{
     color:white;
     font-size: 2rem;
@@ -104,7 +92,4 @@
     width: 120px;
       height: 400px;
   }
-
- 
-
 </style>

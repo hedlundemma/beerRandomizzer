@@ -21,7 +21,6 @@ body {
 h1 {
   font-size: 3rem;
   color: white;
-  font-family: Garamond;
 }
 
 h2 {
@@ -32,13 +31,14 @@ h2 {
 
 h3{
   font-size: 1.5rem;
-  margin: 2rem;
   font-family: Garamond;
+  margin: 2rem;
 }
 
 p {
   font-size: 1.3rem;
   line-height: 2rem;
+  margin: 0;
 }
 
 .welcome-page {
@@ -58,11 +58,12 @@ p {
   width: 100%;
   background-image: url(../public/brewdog-background.jpeg);
   background-size: cover;
-  opacity: 0.3;
+  opacity: 0.2;
   z-index: -1;
 }
 
 .welcome-page-h1 {
+  font-family: Garamond;
   font-size: 4rem;
   color: black;
 }
@@ -87,4 +88,19 @@ p {
 .favourite-beers {
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+nav, footer {
+  display: flex;
+  align-items: center;
+  height: 9rem;
+  background-color: black;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+footer {
+  margin-top: 2rem;
+  color: white;
 }

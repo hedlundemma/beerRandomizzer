@@ -2,10 +2,7 @@
     import { createQuery } from '@tanstack/svelte-query';
     import {type Beer} from '../types/types';
     import '../app.css';
-
-  
-
- 
+  import { each } from 'svelte/internal';
   
     const endpoint: string = 'https://api.punkapi.com/v2/beers';
     
@@ -31,7 +28,7 @@
   <!-- input bind value makes sure that the variable beerName will be updated with the current value of the input element-->
  
 
-  <input bind:value={beerName} type="text" placeholder="Search for beer" style="padding: 0.5rem"/>
+<input bind:value={beerName} type="text" placeholder="Search for beer" style="padding: 0.5rem"/>
 <div class = "beer-container">
   
   {#if $query.isLoading}
@@ -40,13 +37,12 @@
   {#if $query.isSuccess && $query.data.length > 0}
     
       {#each $query.data as beer}
-     
-        <h2>{beer.name}</h2>
-        {#if beer.image_url}
+        <h2 style="font-size: 2.5rem;">________________________<br><br>{beer.name}</h2>
+      {#if beer.image_url}
         
     <img src = {beer.image_url} class ="custom-image" alt = "beer">
     {:else}
-   <img class = "error-image" src = "./no-image-available.jpeg" alt = "no beer img availabe">
+    <img class = "error-image" src = "./no-image-available.jpeg" alt = "no beer img availabe">
  
      {/if}
      <h2>Descripton:</h2>

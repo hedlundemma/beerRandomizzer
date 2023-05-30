@@ -16,6 +16,7 @@
 body {
   margin: 0;
   height: fit-content;
+  background-color: aliceblue;
 }
 
 h1 {
@@ -94,7 +95,7 @@ nav, footer {
   display: flex;
   align-items: center;
   height: 9rem;
-  background-color: black;
+  background-image: url(../public/beautiful-shining-stars-night-sky_181624-622.avif);
   width: 100%;
   text-align: center;
   justify-content: center;

@@ -6,15 +6,8 @@
 
 <style>
   button {
-    width: 20rem;
-    height: 4rem;
-    background-color: black;
+    background-image: url(../public/beautiful-shining-stars-night-sky_181624-622.avif);
     border: none;
-    border-radius: 2rem;
-    cursor: pointer;
-    font-size: 1.5rem;
-    padding: 1rem;
-    color: white;
     margin-bottom: 2rem;
     margin-top: 1rem;
   }

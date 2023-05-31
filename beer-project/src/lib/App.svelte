@@ -21,17 +21,41 @@
   }
 
   let showElements = sessionStorage.getItem('showElements');
-  
-
 </script>
 
 {#if showElements !== 'false'}
-  <div class="welcome-page">
-    <h1 class="welcome-page-h1">Welcome to Beer Explorer</h1>
+  <div id="welcome-page">
+    <h1>Welcome to Beer Explorer</h1>
     <h2>If you crave a beer, but don't know which one, you've come to the right place!</h2>
     <h3>Press the button and be inspired</h3>
-    <button class="welcome-button" on:click={goToBeerPage}>Get me a random beer</button>
-  </div>
+    <button on:click={goToBeerPage}>Get me a random beer</button>
+
+<style>
+      
+  h2 {
+     color: white;
+  }
+
+  h3 {
+     color: white;
+  }
+
+  button {
+    font-family: Helvetica, Arial, sans-serif;
+    color: white;
+    background: transparent;
+    border: 1px solid #F0A202;
+    outline: none;
+  }
+
+  button:active {
+    background-color: #F0A202;
+    transform: translateY(4px);
+    transition-duration: 0.2s;
+  }
+</style>
+
+</div>
 {:else}
 <Layout>
   <QueryClientProvider client={queryClient}>
@@ -44,4 +68,12 @@
     <SavedBeers/>
   </QueryClientProvider>
   </Layout>
-{/if} 
+{/if}
+
+<style>
+  .beer-section {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+</style>

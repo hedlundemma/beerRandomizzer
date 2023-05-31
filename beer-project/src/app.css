@@ -5,6 +5,17 @@
   background-color: white;
 }
 
+#welcome-page {
+  background-image: url(../public/beautiful-shining-stars-night-sky_181624-622.avif);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
 #app{
   width: 100%;
   display: flex;
@@ -20,19 +31,19 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   color: white;
 }
 
 h2 {
   font-size: 1.8rem;
   line-height: 1.1;
-  font-family: Garamond;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 h3{
   font-size: 1.5rem;
-  font-family: Garamond;
+  font-family: Helvetica, Arial, sans-serif;
   margin: 2rem;
 }
 
@@ -42,53 +53,19 @@ p {
   margin: 0;
 }
 
-.welcome-page {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.welcome-page::after {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-image: url(../public/brewdog-background.jpeg);
-  background-size: cover;
-  opacity: 0.2;
-  z-index: -1;
-}
-
-.welcome-page-h1 {
-  font-family: Garamond;
-  font-size: 4rem;
-  color: black;
-}
-
-.welcome-button {
+button {
   width: 20rem;
   height: 4rem;
   font-size: 1.5rem;
   font-family: Helvetica, Arial, sans-serif;
-  background-color: #FFD400;
+  color: white;
+  background: transparent;
+  border: 1px solid #F0A202;
+  outline: none;
+  transition: 0.8s ease-in-out;
   border-radius: 2rem;
   padding: 1rem;
   cursor: pointer;
-}
-
-.beer-section {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.favourite-beers {
-  margin-left: 1rem;
-  margin-right: 1rem;
 }
 
 nav, footer {

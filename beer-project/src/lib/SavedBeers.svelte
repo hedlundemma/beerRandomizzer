@@ -31,6 +31,12 @@
         padding-bottom: 10px;
         border: 1px solid black;
     }
+
+    .favourite-beers {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
     img {
         height: 120px;
     }

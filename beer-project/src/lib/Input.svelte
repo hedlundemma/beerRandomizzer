@@ -2,6 +2,8 @@
   import { createQuery } from '@tanstack/svelte-query';
   import {type Beer} from '../types/types';
   import '../app.css';
+  import { addToFavourites, removeFromFavourite } from './utils/savedBeersUtils';
+  import Favourite from './Favourite.svelte';
   import { each } from 'svelte/internal';
   
     const endpoint: string = 'https://api.punkapi.com/v2/beers';
@@ -22,6 +24,8 @@
         }
     },
   });
+  let savedBeers: Beer[] = JSON.parse(localStorage.getItem('savedBeers')) || [];
+      let savedBeerIds: (string | number)[] = savedBeers.map((beer) => beer.id);
   </script>
   <!-- input bind value makes sure that the variable beerName will be updated with the current value of the input element-->
  
@@ -42,6 +46,15 @@
         {:else}
           <img class = "error-image" src = "./no-image-available.jpeg" alt = "no beer img availabe">
       {/if}
+      <Favourite fill={savedBeerIds.includes(beer.id) ? '#FFD400' : 'none'} on:click={() => {
+        if (savedBeerIds.includes(beer.id))
+        {
+            removeFromFavourite(beer, savedBeers);
+        }
+        else
+            addToFavourites(beer);
+    }} />
+      
 
       <h2>Description:</h2>
       <p>{beer.description}</p>

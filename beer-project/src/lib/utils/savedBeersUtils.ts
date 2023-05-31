@@ -15,3 +15,8 @@ export function addToFavourites (item: Beer) {
     localStorage.setItem('savedBeers', JSON.stringify(savedBeers))
     window.location.reload();
     };
+
+export let savedBeers: Beer[] = JSON.parse(localStorage.getItem('savedBeers')) || [];
+
+export let savedBeerIds: (string | number)[] = savedBeers.map((beer) => beer.id);
+

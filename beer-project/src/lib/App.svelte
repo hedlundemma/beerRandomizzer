@@ -20,7 +20,7 @@
     window.location.reload();
   }
 
-  let showElements = sessionStorage.getItem('showElements');
+  let showElements: string = sessionStorage.getItem('showElements');
 </script>
 
 {#if showElements !== 'false'}

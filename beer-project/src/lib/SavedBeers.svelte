@@ -1,8 +1,6 @@
 <script lang="ts">
     import Favourite from "./Favourite.svelte";
-    import { removeFromFavourite } from "./utils/savedBeersUtils";
-
-    let savedBeers = JSON.parse(localStorage.getItem('savedBeers')) || [];
+    import { removeFromFavourite, addToFavourites, savedBeers, savedBeerIds } from "./utils/savedBeersUtils";
 </script>
 
 <h3>Your favourite beers</h3>
@@ -15,7 +13,14 @@
         {:else}
        <img class = "error-image" src = "./no-image-available.jpeg" alt = "no beer img availabe">
         {/if}
-        <Favourite fill="#FFD400" on:click={() => removeFromFavourite(beer, savedBeers)}/>
+        <Favourite fill={savedBeerIds.includes(beer.id) ? '#FFD400' : 'none'} on:click={() => {
+            if (savedBeerIds.includes(beer.id))
+            {
+                removeFromFavourite(beer, savedBeers);
+            }
+            else
+                addToFavourites(beer);
+        }} />
     </div>
 {/each}
 </section>

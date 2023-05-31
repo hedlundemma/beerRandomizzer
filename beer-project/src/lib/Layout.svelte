@@ -2,9 +2,9 @@
   import  '../app.css';
 </script>
 
-<nav>
+<header>
   <h1>BEER EXPLORER</h1>
-</nav>
+</header>
 <!-- slot is a indication that more things will be here-->
 
 <slot />

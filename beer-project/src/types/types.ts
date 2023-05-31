@@ -5,4 +5,4 @@ export type Beer = {
     food_pairing: string;
     image_url?: string,
     brewers_tips: string
-}
+};

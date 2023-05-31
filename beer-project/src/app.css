@@ -78,7 +78,7 @@ button:hover {
   width: 16rem;
 }
 
-nav, footer {
+header, footer {
   display: flex;
   align-items: center;
   height: 9rem;

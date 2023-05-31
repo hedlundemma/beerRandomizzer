@@ -2,9 +2,8 @@
     import { type Beer } from '../types/types';
     import { createQuery } from '@tanstack/svelte-query';
     import Favourite from './Favourite.svelte';
-    import { addToFavourites, removeFromFavourite } from './utils/savedBeersUtils';
+    import { addToFavourites, removeFromFavourite, savedBeers, savedBeerIds } from './utils/savedBeersUtils';
     
-
     // query to fetch a random beer 
     const query = createQuery({
         queryKey: ['beers'],
@@ -14,9 +13,6 @@
           ),
           refetchOnWindowFocus:false
       })
-
-      let savedBeers: Beer[] = JSON.parse(localStorage.getItem('savedBeers')) || [];
-      let savedBeerIds: (string | number)[] = savedBeers.map((beer) => beer.id);
 </script>
 
 <div class="beer-data">

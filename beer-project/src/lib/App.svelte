@@ -28,7 +28,7 @@
     <h1>Welcome to Beer Explorer</h1>
     <h2>If you crave a beer, but don't know which one, you've come to the right place!</h2>
     <h3>Press the button and be inspired</h3>
-    <button on:click={goToBeerPage}>Get me a random beer</button>
+    <button on:click={goToBeerPage}>Get random beer</button>
 
 <style>
       
@@ -41,8 +41,6 @@
   }
 
   button {
-    font-family: Helvetica, Arial, sans-serif;
-    color: white;
     background: transparent;
     border: 1px solid #F0A202;
     outline: none;
@@ -50,8 +48,6 @@
 
   button:active {
     background-color: #F0A202;
-    transform: translateY(4px);
-    transition-duration: 0.2s;
   }
 </style>
 
@@ -61,7 +57,7 @@
   <QueryClientProvider client={queryClient}>
     <section class = "beer-section">
       <SingleBeer>
-        <Button on:click={fetchBeer} buttonText="Fetch Random Beer"/>
+        <Button on:click={fetchBeer} buttonText="Get random beer"/>
       </SingleBeer>
       <Input/>
     </section>
